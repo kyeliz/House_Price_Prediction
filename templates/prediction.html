@@ -1,0 +1,48 @@
+
+{% extends "base.html" %} <!-- diyoruz ki bu sayfa base.html de istedigimiz, gosterdigimiz yere baglanacak
+                            orada gozukecek -->
+
+{% block content %}  <!-- base.html sayfasinda gozukmesini istedigimiz kodu bu sekilde suslu parantez icindeki ifadeler icine aliyoruz -->
+<title>House Prediction Result</title>
+<style>
+    .result-box {
+        border: 2px solid  #2b919f;
+        border-radius: 10px;
+        padding: 20px;
+        max-width: 300px;
+        margin: 20px auto;
+        background-color: #f9f9f9;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+    }
+
+    .result-title {
+        font-size: 24px;
+        color: #333;
+        margin-bottom: 10px;
+    }
+
+    .result-text {
+        font-size: 18px;
+        color: #29462a;
+        font-weight: bold;
+    }
+
+    .highlight-text {
+        color: #3fc9dc; /* Farklı bir renk (kırmızı örnek) */
+        font-weight: bold;
+    }
+</style>
+</head>
+<body>
+
+    <div class="result-box">
+        <p class="result-text">
+          <span class="highlight-text">The predicted house price is:<br></span> €{{ predicted_price }}
+        </p>
+      </div>
+
+</body>
+
+{% endblock %}
+

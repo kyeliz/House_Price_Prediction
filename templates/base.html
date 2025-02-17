@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>House Price Prediction</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #E0F7FA; /* Pastel turkuaz arka plan */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        background-image: url('https://images.pexels.com/photos/280229/pexels-photo-280229.jpeg?auto=compress&cs=tinysrgb&w=800');
+        background-repeat: no-repeat; /* Tekrar etmesini engeller */
+        background-size: cover; /* Resmi tam ekrana sığdırır */
+        background-position: center; /* Resmi ortalar */
+    }
+
+    .form-container {
+        display: block; 
+        margin-top: 20px;
+        margin-bottom: 20px;
+        background-color: #ffffff;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        max-width: 400px;
+        height: 400;
+        width: 90%;
+    }
+
+    h1 {
+        text-align: center;
+        color: #333;
+        font-size: 1.2em;
+        margin-bottom: 10px;
+    }
+
+    label {
+        display: block;
+        font-weight: bold;
+        color: #444;
+        margin-bottom: 5px;
+        font-size: 0.9em;
+    }
+
+    input[type="number"],
+    select {
+        width: 100%;
+        padding: 5px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        font-size: 0.85em;
+        background-color: #FFEBEE; /* Pastel pembe kutucuklar */
+    }
+
+    button {
+        width: 100%;
+        padding: 10px;
+        background-color: #3fc9dc; /* Pastel mavi buton */
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 0.9em;
+        font-weight: bold;
+    }
+
+    button:hover {
+        background-color: #677c91;
+    }
+
+    .info {
+        text-align: center;
+        color: #666;
+        font-size: 0.8em;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="form-container">
+    <h1>Belgium House Price Prediction</h1>
+    <form action="/predict/" method="get">
+        <label for="number_of_bedrooms">Bedrooms:</label>
+        <input type="number" name="number_of_bedrooms" step="1" required>
+
+        <label for="living_area">Living Area (m²):</label>
+        <input type="number" name="living_area" step="1" required>
+
+        <label for="equipped_kitchen">Equipped Kitchen:</label>
+        <select name="equipped_kitchen" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label for="furnished">Furnished:</label>
+        <select name="furnished" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label for="open_fire">Open Fire:</label>
+        <select name="open_fire" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label for="swimming_pool">Swimming Pool:</label>
+        <select name="swimming_pool" required>
+            <option value="1">Yes</option>
+            <option value="0">No</option>
+        </select>
+
+        <label for="building_condition">Condition:</label>
+        <select name="building_condition" required>
+            <option value="1">To renovate</option>
+            <option value="2">To be done up</option>
+            <option value="3">As new</option>
+            <option value="4">Good</option>
+            <option value="5">Just renovated</option>
+            <option value="6">To restore</option>
+        </select>
+
+        <label for="property_type">Type:</label>
+        <select name="property_type" required>
+            <option value="House">House</option>
+            <option value="Apartment">Apartment</option>
+        </select>
+
+        <label for="post_code">Post Code:</label>
+        <input type="number" name="post_code" required>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <div id="content">
+      {% block content %} {% endblock %}
+    </div>
+
+</div>
+
+</body>
+</html>
+
+
+
+     
+
+
+
+
+ 
