@@ -41,5 +41,4 @@ House_Price_Prediction
 ```
 
 ## ⏱️ Project Timeline
-The initial setup of this project was completed in 7 days.
->>>>>>> 1a7f429 (correcting)
+The initial setup of this project was completed in 14 days.
